@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Бесплатные мини-инструменты для учёбы, работы и повседневной жизни. Работают без регистрации и интернета после загрузки.">
+	<title>MiniTools — онлайн конвертеры, генераторы и калькуляторы</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>MiniTools — онлайн конвертеры, генераторы и калькуляторы</h1>
+		<p>Все инструменты работают в браузере. Никакой регистрации и подключения к интернету не требуется.</p>
+	</header>
+
+	<main>
+		<!-- === КОНВЕРТЕРЫ === -->
+		<section id="inch-cm">
+			<h2>Конвертер дюймов в сантиметры онлайн</h2>
+			<p>Преобразуйте длину из дюймов в сантиметры и обратно.</p>
+			<form>
+				<input type="number" id="inch-input" placeholder="Дюймы">
+				<input type="number" id="cm-input" placeholder="Сантиметры">
+				<button type="button" id="inch-cm-clear">Очистить</button>
+			</form>
+		</section>
+
+		<section id="kg-lb">
+			<h2>Конвертер килограммов в фунты онлайн</h2>
+			<p>Быстро переведите вес из килограммов в фунты и наоборот.</p>
+			<form>
+				<input type="number" id="kg-input" placeholder="Килограммы">
+				<input type="number" id="lb-input" placeholder="Фунты">
+				<button type="button" id="kg-lb-clear">Очистить</button>
+			</form>
+		</section>
+
+		<section id="temp">
+			<h2>Конвертер температуры: градусы Цельсия и Фаренгейта</h2>
+			<p>Перевод температуры между шкалами Цельсия и Фаренгейта.</p>
+			<form>
+				<input type="number" id="c-input" placeholder="°C">
+				<input type="number" id="f-input" placeholder="°F">
+				<button type="button" id="temp-clear">Очистить</button>
+			</form>
+		</section>
+
+		<section id="unix-date">
+			<h2>Конвертер UNIX-времени в читаемую дату</h2>
+			<p>Преобразуйте метку времени UNIX в понятный формат даты и наоборот.</p>
+			<form>
+				<input type="number" id="unix-input" placeholder="UNIX-время (секунды)">
+				<input type="text" id="date-input" placeholder="Дата (ГГГГ-ММ-ДД ЧЧ:ММ:СС)">
+				<button type="button" id="unix-date-clear">Очистить</button>
+			</form>
+		</section>
+
+		<!-- === ГЕНЕРАТОРЫ === -->
+		<section id="password-generator">
+			<h2>Генератор надёжного пароля онлайн</h2>
+			<p>Создайте случайный пароль из 12 символов с цифрами, заглавными буквами и символами.</p>
+			<form>
+				<input type="text" id="password-output" readonly>
+				<label><input type="checkbox" id="use-symbols" checked> Символы</label>
+				<label><input type="checkbox" id="use-digits" checked> Цифры</label>
+				<label><input type="checkbox" id="use-uppercase" checked> Заглавные</label>
+				<button type="button" id="generate-password">Сгенерировать</button>
+			</form>
+		</section>
+
+		<section id="random-number">
+			<h2>Генератор случайного числа по диапазону</h2>
+			<p>Получите случайное целое число в заданном диапазоне от и до.</p>
+			<form>
+				<input type="number" id="rand-from" placeholder="От" value="1">
+				<input type="number" id="rand-to" placeholder="До" value="100">
+				<input type="text" id="rand-output" readonly>
+				<button type="button" id="generate-random">Сгенерировать</button>
+			</form>
+		</section>
+
+		<section id="uuid-generator">
+			<h2>Генератор UUID / GUID онлайн</h2>
+			<p>Создайте уникальный идентификатор в формате UUID v4.</p>
+			<form>
+				<input type="text" id="uuid-output" readonly>
+				<button type="button" id="generate-uuid">Сгенерировать UUID</button>
+			</form>
+		</section>
+
+		<section id="lorem-generator">
+			<h2>Генератор Lorem Ipsum текста</h2>
+			<p>Создайте заглушку из 1–10 абзацев для макета или тестирования.</p>
+			<form>
+				<input type="number" id="lorem-paragraphs" min="1" max="10" value="3">
+				<textarea id="lorem-output" rows="5" readonly></textarea>
+				<button type="button" id="generate-lorem">Создать текст</button>
+			</form>
+		</section>
+
+		<!-- === КАЛЬКУЛЯТОРЫ === -->
+		<section id="bmi-calculator">
+			<h2>Калькулятор ИМТ (индекс массы тела)</h2>
+			<p>Узнайте свой ИМТ по росту и весу с интерпретацией результата.</p>
+			<form>
+				<input type="number" id="bmi-height" placeholder="Рост (см)">
+				<input type="number" id="bmi-weight" placeholder="Вес (кг)">
+				<div id="bmi-result"></div>
+				<button type="button" id="calculate-bmi">Рассчитать ИМТ</button>
+			</form>
+		</section>
+
+		<section id="walk-calories">
+			<h2>Калькулятор калорий при ходьбе</h2>
+			<p>Рассчитайте, сколько калорий вы сожгли, сделав определённое количество шагов.</p>
+			<form>
+				<input type="number" id="walk-weight" placeholder="Вес (кг)">
+				<input type="number" id="walk-steps" placeholder="Шаги">
+				<div id="walk-result"></div>
+				<button type="button" id="calculate-walk">Рассчитать калории</button>
+			</form>
+		</section>
+
+		<section id="future-date">
+			<h2>Калькулятор даты через N дней от сегодня</h2>
+			<p>Узнайте, какое будет число через указанное количество дней.</p>
+			<form>
+				<input type="number" id="days-ahead" placeholder="Количество дней">
+				<div id="future-date-result"></div>
+				<button type="button" id="calculate-future-date">Посчитать дату</button>
+			</form>
+		</section>
+
+		<section id="text-analyzer">
+			<h2>Сколько слов и символов в тексте</h2>
+			<p>Анализ текста: подсчёт слов, символов с пробелами и без.</p>
+			<form>
+				<textarea id="text-input" placeholder="Вставьте текст сюда..."></textarea>
+				<div id="text-stats"></div>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<h2>Как опубликовать этот сайт бесплатно</h2>
+		<ol>
+			<li>Зарегистрируй аккаунт на <a href="https://github.com" target="_blank">GitHub.com</a></li>
+			<li>Создай новый репозиторий с названием <code>username.github.io</code></li>
+			<li>Загрузи туда <code>index.html</code>, <code>style.css</code>, <code>script.js</code></li>
+			<li>Через 1–2 минуты сайт будет доступен по адресу <code>https://username.github.io</code></li>
+		</ol>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+</html>
